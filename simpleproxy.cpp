@@ -878,7 +878,7 @@ int main(int argc, char **argv)
 
     /* Get the server host and port from the command line */
     if (argc < 3) {
-        fprintf(stderr, "Usage: tcpproxy local_host local_port remote_host remote_port datapath_device_name TIMEOUT_LEN CHECK_INTERVAL MIN_LEN \n");
+        fprintf(stderr, "Usage: simpleproxy local_host local_port remote_host remote_port datapath_device_name TIMEOUT_LEN CHECK_INTERVAL MIN_LEN \n");
         return 1;
     }
     local_host = argv[1];
