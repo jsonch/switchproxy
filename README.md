@@ -15,15 +15,16 @@ Limitations:
 
 Usage: 
 
-sudo ./simpleproxy $LOCALIP $LOCALPORT $REMOTEIP $REMOTEPORT $FASTSOCKETINTERFACE $TIMEOUT $INTERVAL $MINTIME
+sudo ./simpleproxy $LOCALIP $LOCALPORT $REMOTEIP $REMOTEPORT $FASTSOCKETINTERFACE
 
 $LOCALIP/$LOCALPORT = IP/port of openflow agent on switch
+
 $REMOTEIP/$REMOTEPORT = IP/port of the remote openflow controller
+
 $FASTSOCKETINTERFACE = the interface that connected to a FE port
 
-Other parameters are specific to using this code as a timing proxy that sends the switch a default forwarding instruction for a packet when it does not receive a response from the controller within a bounded period of time. See scripts/startproxy.sh and the paper for more details: http://dl.acm.org/citation.cfm?id=2991081
 
 What the code does: 
-
-1) launches a thread to send a keepalive ping to the OF agent on the switch. 
-2) launches a thread that uses select to move packets from the OF agent socket to the controller socket (and vice versa), and listen for packets to process on the fast socket interface to the FE. 
+1) proxies and processes control packets between the OF agent on the switch and the controller. 
+2) processes packets from the FE (sent via the fast path interface)
+3) runs a thread to send a keepalive ping to the OF agent on the switch. 
