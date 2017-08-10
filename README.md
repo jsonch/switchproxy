@@ -16,14 +16,14 @@ Demo & testing:
 There is a mininet test harness in ./mininet with a simple demo where the proxy gets a clone of every packet the switch handles. 
 
 *start the mininet topology:*
-sudo python startmn.py
+sudo python mininet/startmn.py
 - this will also: 
   1. do all the switch configuration to use the proxy, 
   2. set the controller for ovs switch s1 to localhost:9999 and,
   3. add a rule to clone every packet to the fast path interface of the proxy
 
 *start the ryu controller, running on localhost and listening on the standard port:*
-sudo ryu-manager staticSwitch.py --ofp-tcp-listen-port=6633
+sudo ryu-manager mininet/staticSwitch.py --ofp-tcp-listen-port=6633
 - this will just add some static forwarding rules
 
 *start the proxy:*
