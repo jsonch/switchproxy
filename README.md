@@ -2,7 +2,7 @@ OFX-like proxy between a switch and controller.
 
 This is a hybrid openflow proxy / packet processor designed to run on a switch. It proxies the OpenFlow connection between a switch manager (i.e., the OVS agent) and a controller, and also has a fast path connection to the switch's forwarding engine, which lets it do packet processing without the overhead of the control path. 
 
-Usage: 
+###Usage: 
 
 ```make simpleproxy```
 
@@ -11,7 +11,7 @@ $LOCALIP/$LOCALPORT = IP/port of openflow agent on switch
 $REMOTEIP/$REMOTEPORT = IP/port of the remote openflow controller
 $FASTSOCKETINTERFACE = the interface that connected to a FE port
 
-Demo & testing: 
+###Demo & testing: 
 
 There is a mininet test harness in ./mininet with a simple demo where the proxy gets a clone of every packet the switch handles. 
 
@@ -39,7 +39,7 @@ There is a mininet test harness in ./mininet with a simple demo where the proxy 
 - you should see the proxy forwarding OF messages to / from the controller, and also getting clones of the datapath packets on the fast path interface. 
 
 
-Modifying code: 
+###Modifying code: 
 
 modify these functions in simpleproxy.cpp:
 
@@ -48,7 +48,7 @@ modify these functions in simpleproxy.cpp:
 - ```void processDpMessage(int dpsock);```
 
 
-Limitations: 
+###Limitations: 
 
 - Does not support sending custom messages to the controller or OVS agent.
 
