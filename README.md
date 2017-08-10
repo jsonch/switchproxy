@@ -1,6 +1,4 @@
-OFX-like proxy between a switch and controller.
-
-This is a hybrid openflow proxy / packet processor designed to run on a switch. It proxies the OpenFlow connection between a switch manager (i.e., the OVS agent) and a controller, and also has a fast path connection to the switch's forwarding engine, which lets it do packet processing without the overhead of the control path. 
+This is a hybrid openflow proxy and packet processor designed to run on a switch. It proxies the OpenFlow connection between a switch manager (i.e., the OVS agent) and a controller, and also has a fast path connection to the switch's forwarding engine, which lets it do packet processing without the overhead of the control path. 
 
 ### Usage: 
 
